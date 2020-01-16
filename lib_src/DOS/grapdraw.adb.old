@@ -1,0 +1,88 @@
+package body Graphics.Drawing is -- DOS
+   ------------
+   -- Circle --
+   ------------
+
+   procedure Circle (
+     X, Y   : Integer;
+     Radius : Natural;
+     Index  : Colors.Color_Index
+   ) is
+   begin
+      SVGA.Circle (Buffer.all, X, Y, Radius, SVGA.Color_Type (Index));
+   end Circle;
+
+   --------------------
+   -- Clear_Graphics --
+   --------------------
+
+   procedure Clear_Graphics (Index : Colors.Color_Index) is
+   begin
+      SVGA.Clear_Screen (Buffer.all, SVGA.Color_Type (Index));
+   end Clear_Graphics;
+
+   --------------------
+   -- Fill_Rectangle --
+   --------------------
+
+   procedure Fill_Rectangle (
+     X, Y   : Integer;
+     Width  : Natural;
+     Height : Natural;
+     Index  : Colors.Color_Index
+   ) is
+   begin
+      SVGA.Fill_Rect (
+        Buffer.all, X, Y, X + Width, Y + Height, SVGA.Color_Type (Index)
+      ); --QQ Perhaps: X + Width - 1, Y + Height - 1
+   end Fill_Rectangle;
+
+   ---------------
+   -- Get_Pixel --
+   ---------------
+
+   function Get_Pixel (X, Y : Integer) return Colors.Color_Index is
+   begin
+      return Colors.Color_Index (SVGA.Get_Pixel (Buffer.all, X, Y));
+   end Get_Pixel;
+
+   ---------------------
+   -- Horizontal_Line --
+   ---------------------
+
+   procedure Horizontal_Line (
+     X1, X2 : Integer;
+     Y      : Integer;
+     Index  : Colors.Color_Index
+   ) is
+   begin
+      SVGA.Hor_Line (Buffer.all, X1, X2, Y, SVGA.Color_Type (Index));
+   end Horizontal_Line;
+
+   ----------
+   -- Line --
+   ----------
+
+   procedure Line (
+     X1, Y1 : Integer;
+     X2, Y2 : Integer;
+     Index  : Colors.Color_Index
+   ) is
+   begin
+      SVGA.Line (Buffer.all, X1, Y1, X2, Y2, SVGA.Color_Type (Index));
+   end Line;
+
+   ---------------
+   -- Set_Pixel --
+   ---------------
+
+   procedure Set_Pixel (
+     X, Y  : Integer;
+     Index : Colors.Color_Index
+   ) is
+   begin
+      SVGA.Set_Pixel (Buffer.all, X, Y, SVGA.Color_Type (Index));
+   end Set_Pixel;
+
+end Graphics.Drawing;
+

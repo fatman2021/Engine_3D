@@ -1,0 +1,1 @@
+gnatmake -O2 -gnatn -gnatp -fomit-frame-pointer -funroll-loops -gnatk8 -I../lib_src -I../lib_src/linux -I../lib_src/3dmodels -I../lib_src/misc -I../lib_src/uza_src demos -largs -lvga -lvgagl -s

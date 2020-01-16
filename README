@@ -1,0 +1,38 @@
+This is the linux port of Gautier's 3d engine.  Most things
+work more or less... sometimes less.
+This is NOT the DOS version, and does NOT work with DOS.
+Yes, I know there is a DOS subdirectory!  It will work
+with DOS someday, but not today!
+
+You will need:
+(1) An Ada compiler.  I use the GNAT compiler available from
+    ftp://cs.nyu.edu/pub/gnat
+(2) Linux!  I use Debian GNU/Linux.
+(3) The linux svga library svgalib.  If you can't find it, check
+out http://www.cs.bgu.ac.il/~zivav/svgalib/ or
+ftp://sunsite.unc.edu:/pub/Linux/lib/graphics
+
+In what follows I will assume you are using the GNAT compiler.
+You can make the demos by running the script compile.linux
+in the demos subdirectory.  Run the program "demos" and there
+you are!
+
+You may have to run this program as root.  This is because
+the svgalib directly accesses the screen, and the average
+humble user doesn't have the required access permissions.
+
+Note that the file names have been krunched to 8 character
+DOS style names.  Either use gnatchop to turn these into
+files with long names, or use the -gnatk8 option when
+compiling.  The compile.linux script uses -gnatk8.
+
+Wish list:
+(1) Mouse support that works!
+(1) Support for non-us keyboards
+(3) <add your wishes here>
+
+Good luck!
+
+Duncan Sands.
+
+duncan.sands@math.u-psud.fr
